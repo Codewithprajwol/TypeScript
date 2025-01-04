@@ -28,7 +28,7 @@ abcd("prajwol",(value:string)=>{
 
 //? Generic Function
 function logger<T>(a:T){
-    
+    console.log(a)
 }
 logger<string>('hey')
 logger<number>(12)
