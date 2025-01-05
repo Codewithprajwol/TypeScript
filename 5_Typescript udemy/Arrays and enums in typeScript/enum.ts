@@ -51,5 +51,102 @@ enum data{
 
 //TODOS: let's learn about Object vs Enums
 
+const enum Direction3{
+    up,
+    down,
+    left,
+    right
+}
 
+enum Direction4{
+    up,
+    down,
+    left,
+    right
+}
+
+let direction3=Direction3.up
+let dir=Direction4.down
+
+//? here what you have to understand is that enum created with const will not be compiled to object in javaScript only the variable we created will be compiled but in normal enum whole object will be compiler....const enum is used when you don't want to show the objects in JS.
+
+const oDirection={
+    up:0,
+    down:1,
+    left:2,
+    right:3
+} as const;
+
+// oDirection.up="hello"//? it will throw the error as it is only for read properties
+//? here now oDirection is exaclty works as enums ...some developer use it like this...
+
+//! let's talk about computed value inside enums
+enum AccessPermisssion{
+    None=0,
+    Read=1,
+    Write=2,
+    ReadWrite= Read +Write,//it will be 3 here
+    Delete=4,
+    All=ReadWrite | Delete,// it is union operator so it will be 7
+}
+
+//! enums as union and types
+enum ShapeKind{
+    Circle="circle",
+    Square="square"
+}
+
+type Circle={
+    kind:ShapeKind.Circle;
+    radius:number;
+}
+
+type Square={
+    kind:ShapeKind.Square;
+    sideLength:number;
+}
  
+//? now here kind propeties is a string literal which is strict and cannot be changed
+let circle:Circle={
+    radius:100,
+    // kind:ShapeKind.Square//! it will throw the error 
+    kind:ShapeKind.Circle
+}
+
+
+function printShape(shape:ShapeKind/*here typeScript automatically converts enums into union of circle and square */){
+    console.log(shape)
+}
+printShape(ShapeKind.Circle)
+
+
+//TODOS: let's do some homeworks here aobut enums, array and tuples
+
+//?1.Create an array numbers that only accepts numbers and another array strings that only accepts strings.
+
+const array1:number[]=[1,3,4]
+const array2:Array<string>=['a','b','c']
+
+//? 2. Create a tuple person that holds a string (name) and a numer (age).
+  let person3:[string,number]=['prajwol',20]
+
+//?3. Create a readonly array colors that holds strings and a readonly tuple point that holds two numbers(x,y). Attempt to modify their elements and observe the TypeScript error.
+
+const array3:readonly (string)[]=['red','blue','green'];
+const point:readonly [number,number]=[1,3];
+
+//?4. create an enum called statusEnum that should have 3 properties Active, Inactive, Pending
+
+enum StatusEnum{
+    Active,
+    Inactive,
+    Pending
+}
+
+//?5. Create an object as const called Status with the same structures as an StatusEnum
+
+ const Status={
+    Active:true,
+    Inactive:false,
+    Pending:false
+ }as const;
