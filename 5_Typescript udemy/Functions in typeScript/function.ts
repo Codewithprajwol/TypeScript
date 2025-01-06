@@ -85,7 +85,7 @@ students.map(function(student){
 //? to said this function return nothing you can use void 
 
 //?for never let's take a example below:-
-function throwError():never{ //? here instead of never you can use void but never is good bcz it more stricted version
+function throwErrorr():never{ //? here instead of never you can use void but never is good bcz it more stricted version
     throw new Error('someThing went wrong')
 }
 
