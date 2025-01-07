@@ -71,9 +71,10 @@ function fetchPost() {
         var data;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, fetchData('https://jsonplaceholder.typicode.com/todos/1')];
+                case 0: return [4 /*yield*/, fetchData('https://jsonplaceholder.typicode.com/todos/1')]; //? output doesnot change but our code/typeScript knows what kind of dat is comming.
                 case 1:
-                    data = _a.sent();
+                    data = _a.sent() //? output doesnot change but our code/typeScript knows what kind of dat is comming.
+                    ;
                     console.log(data);
                     return [2 /*return*/];
             }
@@ -81,5 +82,3 @@ function fetchPost() {
     });
 }
 fetchPost();
-// const data=getData()
-// console.log(data)
