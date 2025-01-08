@@ -103,3 +103,50 @@ const secondPerson:PersonWithAddress={
     email:"jayshreeram1@gmail.com",
     address:"kathamandu"
 }
+//? below is the part of generics and interfaces
+
+enum AutomobileType{
+    car='car',
+    bus='bus',
+    truck='truck',
+    bike='bike'
+}
+enum AutomobileBrand{
+    ferrari="ferrari",
+    proche="proche",
+    bmw="BMW",
+    honda="honda",
+    toyota="toyota"
+}
+
+enum AutomobileColors{
+    green="green",
+    pink="pink",
+    blue="blue",
+    yellow="Yellow",
+    black="black",
+    silver="silver"
+}
+
+//? generics along with interfaces
+interface AutoMobiles<Type,Brand,Colors>{//! here generics are used
+    name:Type,
+    brand:Brand,
+    color:Colors[],
+    description:string
+}//? here string can be any value in autoMobiles if i take name:'prajwol' it's not automobile so it must be typed in some way ...which can be achieved through generics and enums
+
+const honda:AutoMobiles<string,string,string>={
+    name:'car',
+    brand:'Honda',
+    color:['pink','blue','red'],
+    description:"This is honda city car.....yooooo"
+}
+
+const Ferrari:AutoMobiles<AutomobileType,AutomobileBrand,AutomobileColors>={
+    name:AutomobileType.car,
+    brand:AutomobileBrand.ferrari,
+    color:[AutomobileColors.pink, AutomobileColors.black],
+    description:"this is a red ferrari"
+}
+
