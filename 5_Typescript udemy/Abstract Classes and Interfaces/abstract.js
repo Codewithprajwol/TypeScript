@@ -14,6 +14,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+// type hol={
+//     date:Date,
+//    reason:string,
+// };
 var Department = /** @class */ (function () {
     function Department(name) {
         this.name = name;
@@ -26,14 +30,6 @@ var Department = /** @class */ (function () {
             }
         }
     };
-    Department.prototype.printHolidays = function () {
-        if (this.holidays.length === 0) {
-            return console.log('this in no holidays data in this particular department object');
-        }
-        this.holidays.forEach(function () {
-            console.log('hello');
-        });
-    };
     return Department;
 }());
 var ItDepartment = /** @class */ (function (_super) {
@@ -43,6 +39,16 @@ var ItDepartment = /** @class */ (function (_super) {
         _this.holidays = [];
         return _this;
     }
+    ItDepartment.prototype.printHolidays = function () {
+        if (this.holidays.length === 0) {
+            return console.log('this in no holidays data in this particular department object');
+        }
+        console.log("This is the holidays for ".concat(this.name));
+        this.holidays.forEach(function (_a, index) {
+            var date = _a.date, reason = _a.reason;
+            console.log("date is ".concat(date, " and reason is ").concat(reason));
+        });
+    };
     return ItDepartment;
 }(Department));
 var adminDepartment = /** @class */ (function (_super) {
@@ -52,6 +58,16 @@ var adminDepartment = /** @class */ (function (_super) {
         _this.holidays = [];
         return _this;
     }
+    adminDepartment.prototype.printHolidays = function () {
+        if (this.holidays.length === 0) {
+            return console.log('this in no holidays data in this particular department object');
+        }
+        console.log("This is the holidays for ".concat(this.name));
+        this.holidays.forEach(function (_a, index) {
+            var date = _a.date, reason = _a.reason;
+            console.log("date is ".concat(date, " and reason is ").concat(reason));
+        });
+    };
     return adminDepartment;
 }(Department));
 // const itDepartment:ItDepartment=new ItDepartment("it Department")
@@ -83,3 +99,4 @@ var adminPart = new adminDepartment();
 itDepart.addHolidays(itHolidays);
 adminPart.addHolidays(adminHolidays);
 itDepart.printHolidays();
+adminPart.printHolidays();

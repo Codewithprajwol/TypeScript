@@ -5,6 +5,10 @@ type Holidays={
     date:Date,
    reason:string,
 }[];
+// type hol={
+//     date:Date,
+//    reason:string,
+// };
 abstract class Department{
     protected abstract holidays:Holidays;
      protected constructor(protected name:string){
@@ -16,14 +20,8 @@ abstract class Department{
         }
       }
     }
-    public printHolidays(){
-      if(this.holidays.length===0){
-        return console.log('this in no holidays data in this particular department object')
-      }
-      this.holidays.forEach((holi,index)=>{
-        console.log('hello')
-      })
-    }
+    protected abstract printHolidays():void;
+ 
 }
 
 class ItDepartment extends Department{
@@ -31,12 +29,31 @@ class ItDepartment extends Department{
     super("itDepartment")
   }
   protected holidays:Holidays=[]
+  public printHolidays(){
+    if(this.holidays.length===0){
+      return console.log('this in no holidays data in this particular department object')
+    }
+    console.log(`This is the holidays for ${this.name}`)
+    this.holidays.forEach(({date,reason},index:number)=>{
+        console.log(`date is ${date} and reason is ${reason}`)
+    })
+  }
 } 
 
 class adminDepartment extends Department{
   protected holidays:Holidays=[];
   constructor(){
     super("adminDepartment")
+    
+  }
+  public printHolidays(){
+    if(this.holidays.length===0){
+      return console.log('this in no holidays data in this particular department object')
+    }
+    console.log(`This is the holidays for ${this.name}`)
+    this.holidays.forEach(({date,reason},index:number)=>{
+        console.log(`date is ${date} and reason is ${reason}`)
+    })
   }
 }
 // const itDepartment:ItDepartment=new ItDepartment("it Department")
@@ -76,3 +93,4 @@ itDepart.addHolidays(itHolidays)
 adminPart.addHolidays(adminHolidays)
 
 itDepart.printHolidays()
+adminPart.printHolidays()
