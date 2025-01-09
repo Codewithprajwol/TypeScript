@@ -9,10 +9,9 @@
 //? since decorator function is invoked during compilation...it can change the classes property, method and ,parameters and others by the time javascript start executing it emmitted or written in the typeScript file
 
 function FirstDecorator(name:string){//? this is called decorator factory 
-    return (Constructor:Function,context:any)=>{//? where this is called actual decorator function
+    return (Constructor:Function)=>{//? where this is called actual decorator function
         console.log(`${name}. How are you?`);
         console.log(Constructor);
-        console.log(context)
     }
 }
 
