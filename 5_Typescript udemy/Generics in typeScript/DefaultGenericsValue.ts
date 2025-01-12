@@ -18,7 +18,7 @@ type Post={
 }
 
 async function fetchPost(){
-    const data=await fetchData<Post>('https://jsonplaceholder.typicode.com/todos/1')//? output doesnot change but our code/typeScript knows what kind of dat is comming.
+    const data=await fetchData<Post>('https://jsonplaceholder.typicode.com/todos/1')//? output doesnot change but our code/typeScript knows what kind of data is comming.
     console.log(data)
 }
 fetchPost()
