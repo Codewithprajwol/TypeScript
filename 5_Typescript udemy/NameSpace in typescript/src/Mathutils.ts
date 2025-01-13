@@ -1,4 +1,3 @@
-///<reference path="common.ts"/>
 
 import { commonUtils } from "./common";
 
