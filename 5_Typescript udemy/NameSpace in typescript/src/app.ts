@@ -1,5 +1,10 @@
-/// <reference path="Mathutils.ts" />
-///<reference path="StringUtils.ts" />
+import add from "./functions/math"
+import { MathUtils } from "./Mathutils"
+import { StringUtils } from "./StringUtils"
+// import printHello from './functions/string'
+const printHello=require('./functions/string')
+
+
 let sum=MathUtils.add(1,3)
 let concatString=StringUtils.add('love','pure')
 
@@ -12,3 +17,6 @@ console.log(concatString)
 //? to solve this we will have to give the outdir file name and change the module to AMD type in tsconfig.json
 
 //! one thing to note that if you want to make a js library that is compatiable with the typeScript...then this typeScript nameSpaces will come into handy.
+
+printHello()
+add(2,3)

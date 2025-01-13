@@ -1,8 +1,9 @@
 "use strict";
-var commonUtils;
-(function (commonUtils) {
-    function log(message) {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.commonUtils = void 0;
+class commonUtils {
+    static log(message) {
         console.log(message);
     }
-    commonUtils.log = log;
-})(commonUtils || (commonUtils = {}));
+}
+exports.commonUtils = commonUtils;

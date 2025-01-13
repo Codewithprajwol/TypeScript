@@ -1,10 +1,11 @@
+import { commonUtils } from "./common";
 
-namespace StringUtils{
-    export function add(a:string, b:string){
+export class StringUtils{
+    static add(a:string, b:string){
         commonUtils.log('hello')
         return a+b;
     }
-    export function subtract(a:string, b:string){
+    static subtract(a:string, b:string){
         return a.replace(b,"")
     }
 }
