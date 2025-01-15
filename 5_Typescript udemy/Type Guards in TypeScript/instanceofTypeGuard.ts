@@ -16,7 +16,7 @@ class Electronics extends Product{
 }
 
 class Clothing extends Product{
-    constructor(name:string, price:number, public size:string, public material:size){
+    constructor(name:string, price:number, public size:string, public material:number){
         super(name,price)
     }
 
