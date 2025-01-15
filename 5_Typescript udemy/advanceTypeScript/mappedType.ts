@@ -104,3 +104,21 @@ type answer_8 = typeof Date extends { new (...args: any[]): any }//true
 
   }
 
+namespace inferKeyword{
+    type ArrayElementType<T>=T extends (infer E)[] ? E:T;
+
+    type TypeOne = ArrayElementType<string[]>;
+
+//string
+    type TypeTwo = ArrayElementType<number[]>;
+//number
+
+    type TypeThree = ArrayElementType<(number | string | boolean)[]>;
+
+// number | string | boolean)
+    type TypeFour = ArrayElementType<{ name: string }>;
+
+    //{name:string}
+    type TypeFive = ArrayElementType<string>;
+//string 
+}
