@@ -15,5 +15,5 @@ const person1:strictUser={
     email:"SitaRam1@gmail.com",
     address:'golok'
 }
-//? it makes all the optinal properties to be strict or manditory
+//? it makes all the optinal properties to be strict or manditory 
 }
