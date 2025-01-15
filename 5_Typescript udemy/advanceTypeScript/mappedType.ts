@@ -152,3 +152,4 @@ type FirstArgument =GetFirstArgumentOfAnyFunction<typeof person>//? this infer t
 type SecondArgment=GetSecondArgumentOfAnyFunction<typeof person>//? this infer the age:number parameter
 
 //? you will need this when you want to infer the type of other third party functions.
+
