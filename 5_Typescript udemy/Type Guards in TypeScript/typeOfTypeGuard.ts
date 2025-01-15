@@ -36,7 +36,7 @@ function printAge(person:Person){
 }
 
 printAge({
-    age:"john",//? here it says this should be number becaue we have done truthiness narrowing 
+    // age:"john",//? here it says this should be number becaue we have done truthiness narrowing 
     name:"john"
 })
 
@@ -62,6 +62,17 @@ type Shape=Circle | Square;
 
 function getArea(shape:Shape){
     if(shape.kind==='circle'){
+        return Math.PI * shape.radius **2;
+    }
+    else{
+        return shape.sideLength **2;
+    }
+}
+
+//? in operator narrowing 
+
+function getArea1(shape:Shape){
+    if("radius" in shape){//? here is the use of in operator which works fine in this case but if both the type Circle and Square have same properties then you have to add some extra checks to know the proper shape you want to deal with.
         return Math.PI * shape.radius **2;
     }
     else{
