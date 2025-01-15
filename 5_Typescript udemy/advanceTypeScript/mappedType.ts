@@ -122,3 +122,33 @@ namespace inferKeyword{
     type TypeFive = ArrayElementType<string>;
 //string 
 }
+
+//! let's learn how to infer the return type of the function..
+//? if you are using the function from certain libaray and you don't know the return type of that function ...then you can use infer keyword to work upon these problem
+function returnString(){
+    return 123// TODO:-if this is string the NewType will be string
+}
+
+type FunctionReturnType<T>=T extends ()=>infer R ?R :T;
+
+type NewType=FunctionReturnType<typeof returnString>
+
+
+//! now infer keyword is used to infer the argument of the function
+
+function person(name:string,age:number){
+    return {
+        name:name,
+        age:age,
+    }
+}
+
+type GetFirstArgumentOfAnyFunction<T>=T extends (first:infer FirstArgument,...args:any[])=>any? FirstArgument:never; 
+
+type GetSecondArgumentOfAnyFunction<T>=T extends(first:any, second:infer secondArgument,...args:any[])=>any?secondArgument:never;
+
+type FirstArgument =GetFirstArgumentOfAnyFunction<typeof person>//? this infer the name:string parameter
+
+type SecondArgment=GetSecondArgumentOfAnyFunction<typeof person>//? this infer the age:number parameter
+
+//? you will need this when you want to infer the type of other third party functions.
