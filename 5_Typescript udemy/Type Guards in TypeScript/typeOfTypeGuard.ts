@@ -39,3 +39,32 @@ printAge({
     age:"john",//? here it says this should be number becaue we have done truthiness narrowing 
     name:"john"
 })
+
+//! now equality Narrowing
+
+//? equality Narrowing is the type of narrowing tecnnique that help typeScript compiler infer a more specific type based on the quality checks that are present below:-
+//? ===
+//? !==
+//? ==
+//? and !=
+
+type Circle={
+    kind:'circle',
+    radius:number
+}
+
+type Square={
+    kind:'sauare',
+    sideLength:number;
+}
+
+type Shape=Circle | Square;
+
+function getArea(shape:Shape){
+    if(shape.kind==='circle'){
+        return Math.PI * shape.radius **2;
+    }
+    else{
+        return shape.sideLength **2;
+    }
+}
