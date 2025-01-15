@@ -37,7 +37,7 @@ function printAge(person:Person){
 
 printAge({
     // age:"john",//? here it says this should be number becaue we have done truthiness narrowing 
-    name:"john"
+    name:"john",
 })
 
 //! now equality Narrowing
