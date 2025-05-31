@@ -1,5 +1,8 @@
-/// <reference path="Mathutils.ts" />
-///<reference path="StringUtils.ts" />
+
+
+import { MathUtils } from "./Mathutils.js"
+import { StringUtils } from "./StringUtils.js"//? here we have to give the .js extension so that browser can understand ...oh this is a module and load as a module
+
 let sum=MathUtils.add(1,3)
 let concatString=StringUtils.add('love','pure')
 

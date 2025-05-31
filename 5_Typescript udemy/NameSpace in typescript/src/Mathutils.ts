@@ -1,12 +1,12 @@
-///<reference path="common.ts"/>
-
-namespace MathUtils{
-    export function add(a:number,b:number){
-        commonUtils.log('hello form MathUtils')
-        return a+b;
+import { AddOutput } from "./addInterface.js";
+import { commonUtils } from "./common.js";
+export class MathUtils {
+     static add(a:number,b:number):AddOutput{
+        commonUtils.loger('hello form MathUtils')
+        return {sum:a+b,name:'MathUtils'}
     }
 
-    export function subtract(a:number, b:number){
+    static subtract(a:number, b:number){
         return a-b
     }
 }

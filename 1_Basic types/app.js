@@ -25,9 +25,11 @@ function test() {
     console.log('host');
 }
 //? if we use never it says that never return from that function so that other later execution will be stooped.
-function fddt() {
-    while (true) {
-    }
+function fddt(message) {
+    // while (true){
+    //     console.log('hi')
+    // }
+    throw new Error(message);
 }
-// fddt()
+fddt("hjio");
 console.log("hello world!");

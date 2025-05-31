@@ -85,6 +85,7 @@ type fire2=number;
 type water=fire1 extends string ? boolean: string; //here this ternary operator is using to define the type of the water
 let val:true=true;// it is called boolean type literals
 
+ 
 
 /*Literal Boolean:
 
@@ -145,7 +146,8 @@ const func1:Object=()=>2 //instead of Function we can write Object since it the 
 
 
 //?Type Casting
-let middleName=<any>"Mark";// before <any> it was string but when you do <any> it type Cast string to any;
+let middleName
+=+<any>"Mark";// before <any> it was string but when you do <any> it type Cast string to any;
 let oneLatName="Mark" as any; //same as above is happening it just another method
 
 let user={

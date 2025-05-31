@@ -1,5 +1,5 @@
-namespace commonUtils{
-    export function log(message:string){
+export class commonUtils{
+     public static loger(message:string){
         console.log(message)
     }
 }

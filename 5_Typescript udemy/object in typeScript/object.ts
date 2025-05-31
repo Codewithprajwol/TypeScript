@@ -20,7 +20,7 @@ let newCar:{brand:string;color:string}={ //! we can define object like that also
     color:"Black",
 }
 
-newCar=[];// now here it will give error because typescript expect to have (brand and color properties as string)
+// newCar=[];// now here it will give error because typescript expect to have (brand and color properties as string)
 
 
 //now let't talk about how can we define the type of object here
@@ -74,16 +74,17 @@ type Post={
 //? so here we can use Post type any time and anywhere
 
 
-// const post3:Post={
-//     title:'hello form china',
-//     content:'content from china',
-//     date:new Date(),
-//     author:{
-//         name:'ram',
-//         age:12,
-//         email:'sheresthaprajwol151@gmail.com'
-//     }
-// }
+const post3:Post={
+    title:'hello form china',
+    content:'content from china',
+    date:new Date(),
+    author:{
+        name:'ram',
+        age:12,
+        email:'sheresthaprajwol151@gmail.com',
+        type: "ai"
+    }
+}
 //! i have been doing in the same file so i am comenting here and changing the type ..if you are reading later you have to figure out by yourself
 
 const post4:Post={

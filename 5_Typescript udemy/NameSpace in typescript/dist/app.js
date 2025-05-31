@@ -1,38 +1,5 @@
-"use strict";
-var commonUtils;
-(function (commonUtils) {
-    function log(message) {
-        console.log(message);
-    }
-    commonUtils.log = log;
-})(commonUtils || (commonUtils = {}));
-///<reference path="common.ts"/>
-var MathUtils;
-(function (MathUtils) {
-    function add(a, b) {
-        commonUtils.log('hello form MathUtils');
-        return a + b;
-    }
-    MathUtils.add = add;
-    function subtract(a, b) {
-        return a - b;
-    }
-    MathUtils.subtract = subtract;
-})(MathUtils || (MathUtils = {}));
-var StringUtils;
-(function (StringUtils) {
-    function add(a, b) {
-        commonUtils.log('hello');
-        return a + b;
-    }
-    StringUtils.add = add;
-    function subtract(a, b) {
-        return a.replace(b, "");
-    }
-    StringUtils.subtract = subtract;
-})(StringUtils || (StringUtils = {}));
-/// <reference path="Mathutils.ts" />
-///<reference path="StringUtils.ts" />
+import { MathUtils } from "./Mathutils.js";
+import { StringUtils } from "./StringUtils.js"; //? here we have to give the .js extension so that browser can understand ...oh this is a module and load as a module
 let sum = MathUtils.add(1, 3);
 let concatString = StringUtils.add('love', 'pure');
 console.log(sum);

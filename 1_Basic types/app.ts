@@ -41,10 +41,11 @@ function test():void{
 
 //? if we use never it says that never return from that function so that other later execution will be stooped.
 
-function fddt():never{
-    while (true){
-
-    }
+function fddt(message:string):never{
+    // while (true){
+    //     console.log('hi')
+    // }
+    throw new Error(message)
 }
-// fddt()
+fddt("hjio")
 console.log("hello world!")

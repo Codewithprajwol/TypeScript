@@ -20,7 +20,7 @@ let dog:catAndDog={
 
 let cat:catAndDog={
     name:'suri',
-    purrs:true
+    purrs:true,
 }//? it can have single properites of cat only
 
 let animal:catAndDog={

@@ -1,14 +1,10 @@
-"use strict";
-///<reference path="common.ts"/>
-var MathUtils;
-(function (MathUtils) {
-    function add(a, b) {
-        commonUtils.log('hello form MathUtils');
-        return a + b;
+import { commonUtils } from "./common.js";
+export class MathUtils {
+    static add(a, b) {
+        commonUtils.loger('hello form MathUtils');
+        return { sum: a + b, name: 'MathUtils' };
     }
-    MathUtils.add = add;
-    function subtract(a, b) {
+    static subtract(a, b) {
         return a - b;
     }
-    MathUtils.subtract = subtract;
-})(MathUtils || (MathUtils = {}));
+}

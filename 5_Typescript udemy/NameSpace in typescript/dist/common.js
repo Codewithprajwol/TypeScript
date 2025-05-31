@@ -1,8 +1,5 @@
-"use strict";
-var commonUtils;
-(function (commonUtils) {
-    function log(message) {
+export class commonUtils {
+    static loger(message) {
         console.log(message);
     }
-    commonUtils.log = log;
-})(commonUtils || (commonUtils = {}));
+}
