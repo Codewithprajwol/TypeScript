@@ -35,3 +35,12 @@ type arrayReadonly=[string,string]// o and 1 is the key here
 type testedhello=keyof arrayReadonly
 
 const praj:testedhello="0"
+
+enum direction{
+    up=7,
+    down,
+    left,
+    right
+}
+
+console.log(direction.down)

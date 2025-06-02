@@ -65,7 +65,7 @@ enum Direction4{
     right
 }
 
-let direction3=Direction3.up
+let direction3=Direction3.up//direct value cames here
 let dir=Direction4.down
 
 //? here what you have to understand is that enum created with const will not be compiled to object in javaScript only the variable we created will be compiled but in normal enum whole object will be compiler....const enum is used when you don't want to show the objects in JS.
@@ -117,7 +117,7 @@ let circle:Circle={
 function printShape(shape:ShapeKind/*here typeScript automatically converts enums into union of circle and square */){
     console.log(shape)
 }
-printShape(ShapeKind.Circle)
+printShape(ShapeKind.Square)
 
 
 //TODOS: let's do some homeworks here aobut enums, array and tuples
@@ -149,4 +149,4 @@ enum StatusEnum{
     Active:true,
     Inactive:false,
     Pending:false
- }as const;
+ } as const;

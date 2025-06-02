@@ -73,7 +73,7 @@ let num:readonly number[]=[1,3,4,4]
 // num[2]=5;//! there it will give the error as it's used readOnly here
 // num.push(4)//! it will also give error
 
-//? same goes for tuples liek this:-
+//? same goes for tuples like this:-
 type TestTuple= readonly[string, string, boolean]
 
 const testing:TestTuple=["ram","sam",true]
