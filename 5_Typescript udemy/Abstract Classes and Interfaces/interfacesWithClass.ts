@@ -22,6 +22,7 @@ namespace module1{
         silver="silver"
     }
     
+    
     //? generics along with interfaces
     interface AutoMobiles<Type,Brand,Colors>{//! here generics are used
         name:Type,
