@@ -38,3 +38,27 @@ function findShape(shape:shapeUnion){
 const squareResult=findShape({shape:'square',side:2})
 console.log(squareResult)
 
+//subtype and supertype in typescript
+
+
+type Animal={
+    name:string
+}
+
+type Dog={
+    name:string,
+    barks:true
+}
+
+type Cat={
+    name:string,
+    purrs:true
+}
+
+const dog:Dog={
+    name:"dogs",
+    barks:true
+}
+
+const animal:Animal=dog// here it will not complain because dog is subtype of Animal
+

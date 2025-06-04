@@ -15,3 +15,8 @@ function findShape(shape) {
 }
 const squareResult = findShape({ shape: 'square', side: 2 });
 console.log(squareResult);
+const dog = {
+    name: "dogs",
+    barks: true
+};
+const animal = dog; // here it will not complain because dog is subtype of Animal
