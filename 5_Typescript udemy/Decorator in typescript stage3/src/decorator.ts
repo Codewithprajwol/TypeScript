@@ -1,9 +1,8 @@
 function nameLogger(originalmethod:any,context:any){
-    console.log('hello')
     return function methodReplacement(this:any,...args:any[]){
         console.log('greeting calling')
         const result=originalmethod.call(this,args)
-
+        console.log('greeting called')
     }
 }
 
@@ -17,7 +16,8 @@ class person{
     greet(){
         console.log(`hello, ${this.name}`);
     }
-    call(test:any,...args:any[]){
-
-    }
 }
+
+const person1=new person('prajwol')
+
+person1.greet()
