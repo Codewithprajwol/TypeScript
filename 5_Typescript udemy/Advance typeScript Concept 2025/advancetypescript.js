@@ -36,3 +36,10 @@ let test3;
 if (test3) {
     console.log(test3.length); // now we narrow down to the string
 }
+//now let's talk about totality ..it means in function all the paramater condition have return type (should have all path of return) ...the it's totality and typescript does that
+function totalityTest(data) {
+    if (typeof data == 'string') {
+        return data.length;
+    }
+    return data.toString().length; // if not return for all path or cases it will return the undefined but we have mentioned that it will return the number so it will ensure totality here
+}
