@@ -35,6 +35,7 @@ var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, 
 };
 function nameLogger(originalmethod, context) {
     return function methodReplacement(...args) {
+        console.log(this, args);
         console.log('greeting calling');
         const result = originalmethod.call(this, args);
         console.log('greeting called');

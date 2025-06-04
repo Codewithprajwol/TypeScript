@@ -1,11 +1,12 @@
 function nameLogger(originalmethod:any,context:any){
     return function methodReplacement(this:any,...args:any[]){
+        console.log(this,args)
         console.log('greeting calling')
         const result=originalmethod.call(this,args)
         console.log('greeting called')
     }
 }
-
+    
 
 class person{
 
